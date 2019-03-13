@@ -1,0 +1,23 @@
+{
+  "name": "ball-lightning",
+  "version": "1.0.0",
+  "description": "BALL-LIGHTNING is a H5 game in which you will play a ball lightning to face many challenges. Your PR or any other participation is welcome if you want more interest. ",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/holycanvas/BALL-LIGHTNING.git"
+  },
+  "author": "Santy Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/holycanvas/BALL-LIGHTNING/issues"
+  },
+  "homepage": "https://github.com/holycanvas/BALL-LIGHTNING#readme",
+  "dependencies": {
+    "gulp": "^4.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules
+/lib
+/bin
+.idea
+.DS_Store
+build
