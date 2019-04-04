@@ -1,0 +1,15 @@
+{
+    "editor.tabSize": 4,
+    "files.exclude": {
+        ".git": true,
+        "node_modules": true,
+        ".github": true
+    },
+    "search.exclude": {
+        ".git": true,
+        "node_modules": true,
+        "build": true,
+        ".github": true,
+        "bin": true
+    }
+}
