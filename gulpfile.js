@@ -29,12 +29,13 @@ const del = require('del');
 const resolve = require('rollup-plugin-node-resolve');
 const fs = require('fs');
 
-var srcFile = 'core/index.js';
-var outputFile = 'build/bundle.js';
+var srcFile = './index.js';
+var outputDir = './build';
+var jsFileName = 'bundle';
 var sourcemap = false;
 
 gulp.task('clear', async function (done) {
-    del.sync('./build/**/*');
+    del.sync(outputDir + '/**/*');
     done();
 });
 
@@ -63,8 +64,16 @@ gulp.task('copy-deps', async function (done) {
 
 gulp.task('compile:min', async function (done) {
     var code = fs.readFileSync(outputFile, 'utf8');
+    global.BL_DEV = false;
+    global.BL_DEBUG = false;
+    const predefine = require('./predefine');
     var result = uglifyjs.minify(code, {
         toplevel: true,
+        mangle: true,
+        sourceMap: true,
+        compress: {
+            global_defs: predefine
+        }
     });
     if (result.error) {
         console.log("errorline:" + result.error.line);
